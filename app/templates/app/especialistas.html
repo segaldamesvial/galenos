@@ -1,0 +1,45 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<div class="container mt-3">
+  <h2>Especialistas en nuestros centros</h2>   
+  <br><br>         
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Especialidad</th>
+        <th>Centro de Atencion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sebastian Galdames Vial</td>
+        <td>Oftanmologia</td>
+        <td>Centro Medico Rapa Nui</td>
+      </tr>
+      <tr>
+        <td>Pilar Bonnault</td>
+        <td>Cardiologia</td>
+        <td>Centro Medico Puerto Montt</td>
+      </tr>
+      <tr>
+        <td>Christofer Ruiz</td>
+        <td>Psicologia Otorrina</td>
+        <td>Centro Medico Santiago</td>
+      </tr>
+      <tr>
+        <td>Nicolas Gonzales</td>
+        <td>Neurologo</td>
+        <td>Centro Medico Valparaiso</td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br><br>
+</div>
+
+
+{% endblock %}

@@ -13,5 +13,18 @@ def login(request):
 
 def hora(request):
     return render(request, 'app/hora.html')
+
+def nosotros(request):
+    return render(request, 'app/nosotros.html')
+
+def especialistas(request): 
+    return render(request, 'app/especialistas.html')
+
+def administracion(request):
+    return render(request, 'app/administracion.html')
+
+def pago (request):
+    return render(request, 'app/pago.html')
+    
     
 
