@@ -1,0 +1,125 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<section>
+    <br>
+    <h1 class="row justify-content-center mx-0">Nuestros Centros</h1>
+    <br>
+    <div class="container mx-auto mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem">
+                    <img
+                        src="{% static 'app/images/descargar.jfif' %}"
+                        class="card-img-top"
+                        alt="..." height="150"
+                        />
+                    <div class="card-body">
+                        <h5 class="card-title">Puerto Montt</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Centro Médico Galenos</h6>
+                        <p class="card-text">
+                            Dirección: Benavente # 999, Puerto Montt
+                            <br>
+                            Teléfono: 65 2 225544
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem">
+                    <img
+                        src="{%  static 'app/images/images.jfif' %}"
+                        class="card-img-top"
+                        alt="..." height="150"
+                        />
+                    <div class="card-body">
+                        <h5 class="card-title">Santiago</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Centro Médico Galenos</h6>
+                        <p class="card-text">
+                            Dirección: Benavente # 999, Santiago 
+                            <br>
+                            Teléfono: 2 2 225544
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem">
+                    <img
+                        src="{% static 'app/images/2021-07-28.jpg' %}"
+                        class="card-img-top"
+                        alt="..." height="150"
+                        />
+                    <div class="card-body">
+                        <h5 class="card-title">Concepción</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Centro Médico Galenos</h6>
+                        <p class="card-text">
+                            Dirección: Benavente # 999, Concepción
+                            <br>
+                            Teléfono: 41 2 225544
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem">
+                    <img
+                        src="{% static 'app/images/images (1).jfif' %}"
+                        class="card-img-top"
+                        alt="..." height="150"
+                        />
+                    <div class="card-body">
+                        <h5 class="card-title">Calama</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Centro Médico Galenos</h6>
+                        <p class="card-text">
+                            Dirección: Benavente # 999, Calama
+                            <br>
+                            Teléfono: 55 2 225544
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem">
+                    <img
+                        src="{%  static 'app/images/IMG_7877.JPG' %}"
+                        class="card-img-top"
+                        alt="..." height="150"
+                        />
+                    <div class="card-body">
+                        <h5 class="card-title">Valdivia</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Centro Médico Galenos</h6>
+                        <p class="card-text">
+                            Dirección: Benavente # 999, Valdivia
+                            <br>
+                            Teléfono: 63 2 225544
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem">
+                    <img
+                        src="{% static 'app/images/sucursales-de-galeno.jpg' %}"
+                        class="card-img-top"
+                        alt="..." height="150"
+                        />
+                    <div class="card-body">
+                        <h5 class="card-title">La Serena</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Centro Médico Galenos</h6>
+                        <p class="card-text">
+                            Dirección: Benavente # 999, La Serena
+                            <br>
+                            Teléfono: 51 2 225544
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

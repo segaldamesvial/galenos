@@ -1,0 +1,167 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<br>
+<br>
+    <div class="container-fluid px-0 px-sm-4 mx-auto justify-content-center">
+        <div class="row justify-content-center mx-0">
+            <div class="col-lg-10">
+                <div class="row justify-content-center mx-0 card border-0">
+                    <form class="jot-form-form justify-content-center" action=""  method="post" name="datos" id="2" autocomplete="on">
+                        <div role="main" class="form-all">
+                            <ul class="form-section page-section">
+                                <div class="form-header-group  header-default">
+                                    <div class="header-text httal htvam">
+                                        <h2 id="header_22" class="form-header">Datos del paciente</h2>
+                                    </div>
+                                </div>
+                                <li class="form-line jf-required" data-type="control_fullname" id="id_15">
+                                        <label class="form-label form-label-left form-label-auto" id="label_15" for="nombres">Nombre y Apellidos del Paciente
+                                            <span class="form-required">*</span>
+                                        </label>
+                                        <div id="cid_15" class="form-input jf-required">
+                                            <div data-wrapper-react="true" class="extended">
+                                            <span class="form-sub-label-container">
+                                                <input type="text" id="nombre" name="nombre" class="form-textbox" size="10" required="" />
+                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Nombre </label>
+                                            </span>
+                                            <span class="form-sub-label-container">
+                                                <input type="text" id="apellidoP" name="apellidoP" class="form-textbox" size="10" required="" />
+                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Apellido Paterno </label>
+                                            </span>
+                                            <span class="form-sub-label-container">
+                                                <input type="text" id="apellidoM" name="apellidoM" class="form-textbox" size="15" required="" />
+                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Apellido Materno </label>
+                                            </span>
+                                            </div>
+                                        </div>    
+                                </li>
+                                <li class="form-line jf-required" data-type="control_email" id="email">
+                                    <label class="form-label form-label-left form-label-auto" id="email">
+                                        Correo Electronico
+                                        <span class="form-required">
+                                        *
+                                        </span>
+                                    </label>
+                                    <div id="cid_26" class="form-input jf-required">
+                                        <span class="form-sub-label-container" style="vertical-align:top">
+                                        <input type="email" id="email" name="email" class="form-textbox" size="30" placeholder="" required="" />
+                                        <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> example@example.com </label>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="form-line jf-required" data-type="control_address">
+                                    <label class="form-label form-label-left form-label-auto">
+                                        Dirección
+                                        <span class="form-required">
+                                        *
+                                        </span>
+                                    </label>
+                                    <div id="cid_17" class="form-input jf-required">
+                                        <div class="form-address-table jsTest-addressField">
+                                        <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                            <span class="form-address-line form-address-street-line jsTest-address-lineField">
+                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                                <input type="text" id="direccion" name="direccion" class="form-textbox form-address-line" required="" />
+                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Dirección de la calle </label>
+                                            </span>
+                                            </span>
+                                        </div>
+                                        <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                            <span class="form-address-line form-address-city-line jsTest-address-lineField ">
+                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                                <input type="text" id="ciudad" name="ciudad" class="form-textbox form-address-city" required="" />
+                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Ciudad </label>
+                                            </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="form-line jf-required" data-type="control_phone" id="id_18">
+                                    <label class="form-label form-label-left form-label-auto" id="label_18" for="input_18_area">
+                                        Número de teléfono
+                                        <span class="form-required">
+                                        *
+                                        </span>
+                                    </label>
+                                    <div id="cid_18" class="form-input jf-required">
+                                    <div data-wrapper-react="true">
+                                        <span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
+                                            <input type="tel" id="cod" name="cod" class="form-textbox" required="" />
+                                            <span class="phone-separate" aria-hidden="true">
+                                            -
+                                            </span>
+                                            <label class="form-sub-label" for="input_18_area" id="sublabel_18_area" style="min-height:13px" aria-hidden="false"> Código de área </label>
+                                        </span>
+                                        <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
+                                            <input type="tel" id="telefono" name="telefono" class="form-textbox" required="" />
+                                            <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Número de teléfono </label>
+                                        </span>
+                                    </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+        <br>
+        <br>                
+    <div class="container-fluid px-0 px-sm-4 mx-auto">
+        <div class="row justify-content-center mx-0">
+        <div class="col-lg-10">
+            <div class="card border-0">
+            <form autocomplete="off">
+                <div id="bg" class="card-header">
+                <div class="mx-0 mb-0 row justify-content-sm-center justify-content-start px-1">
+                    <input type="text" id="dp1" class="datepicker" placeholder="Pick Date" name="date" readonly><span class="fa fa-calendar"></span>
+                </div>
+                </div>
+                <div class="card-body p-3 p-sm-5">
+                <div class="row text-center mx-0">
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">9:00AM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">9:30AM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">9:45AM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">10:00AM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">10:30AM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">10:45AM</div></div>
+                </div>
+                <div class="row text-center mx-0">
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">11:00AM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">11:30AM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">11:45AM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">12:00PM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">12:30PM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">12:45PM</div></div>
+                </div>
+                <div class="row text-center mx-0">
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">13:00PM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">13:30PM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">13:45PM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">14:00PM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">14:30PM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">14:45PM</div></div>
+                </div>
+                <div class="row text-center mx-0">
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">15:00PM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">15:30PM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">16:15PM</div></div>
+                    <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">17:00PM</div></div>
+                </div>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+<br>
+<br>
+
+
+{% endblock %}
