@@ -82,7 +82,7 @@ input {
     border-radius: 10px;
     box-sizing: border-box;
 
-    color: #fff !important;
+    color: rgb(0, 0, 0) !important;
     font-size: 16px;
     letter-spacing: 1px;
     width: 180px;
@@ -399,7 +399,7 @@ thead tr:nth-child(3) th {
     }
   
     .supernova .form-all, .form-all {
-      background-color: #ffffff;
+      background-color: #000000;
     }
   
     .form-all {
@@ -432,7 +432,7 @@ thead tr:nth-child(3) th {
     }
   
     .supernova {
-      background-color: #ffffff;
+      background-color: #000000;
     }
     .supernova body {
       background: transparent;
@@ -445,7 +445,7 @@ thead tr:nth-child(3) th {
     .form-checkbox-other-input,
     .form-captcha input,
     .form-spinner input {
-      background-color: #ffffff;
+      background-color: #000000;
     }
   
     .supernova {
@@ -478,3 +478,8 @@ thead tr:nth-child(3) th {
     }
 
 
+div {
+  color: #000000;
+
+
+}
