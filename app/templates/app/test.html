@@ -1,0 +1,35 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<h1>TEST</h1>
+
+<h2>Pacientes</h2>
+<table>
+    <tr>
+        <th>Rut</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Correo</th>
+        <th>Direccion</th>
+        <th>Celular</th>
+    </tr>
+    {% for pac in pacientes %}
+    <tr>
+        <td>{{pac.0}}</td>
+        <td>{{pac.1}}</td>
+        <td>{{pac.2}}</td>
+        <td>{{pac.3}}</td>
+        <td>{{pac.4}}</td>
+        <td>{{pac.5}}</td>
+        <td>{{pac.6}}</td>
+    </tr>
+    {% endfor %}
+
+
+
+
+{% endblock %}

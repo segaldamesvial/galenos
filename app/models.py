@@ -68,3 +68,7 @@ class Trabajador (models.Model):
         return self.nome
     
     
+# relaciones entre clases 
+
+# trabajador - secretaria
+# trabajador = models.ForeignKey(Trabajador, on_delete=models.PROTECT)
