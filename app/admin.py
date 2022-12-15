@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from.models import Agenda, Cajero, CalendarioBase, HoraMedica, Informe, Medico, Paciente, Pago, Secretaria, Trabajador
+from.models import Agenda, Cajero, CalendarioBase, HoraMedica, Informe, Medico, Paciente, Pago, Secretaria, Trabajador,horaPaciente
 # Register your models here.
 
 admin.site.register(Agenda)
@@ -13,3 +13,4 @@ admin.site.register(Paciente)
 admin.site.register(Pago)
 admin.site.register(Secretaria)
 admin.site.register(Trabajador)
+admin.site.register(horaPaciente)

@@ -1,0 +1,40 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<h2>Horas Pacientes</h2>
+<br><br>
+<div class="table-responsive">
+<table class="table">
+    <tr>
+        <th>Rut</th> 
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Correo</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Especialidad</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+    </tr>
+    {% for hpa in horaspacientes %}
+    <tr>
+        <td>{{hpa.0}}</td> <!--rut-->   
+        <td>{{hpa.1}}</td> <!--nombre--> 
+        <td>{{hpa.2}}</td> <!--apellido paterno--> 
+        <td>{{hpa.3}}</td> <!--apellido materno--> 
+        <td>{{hpa.4}}</td> <!--correo-->
+        <td>{{hpa.5}}</td> <!--direccion-->
+        <td>{{hpa.6}}</td> <!--telefono--> 
+        <td>{{hpa.7}}</td> <!--especialidad-->
+        <td>{{hpa.8}}</td> <!--fecha--> 
+        <td>{{hpa.9}}</td> <!--hora-->
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}

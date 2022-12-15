@@ -15,7 +15,31 @@ def login(request):
     return render(request, 'app/login.html')
 
 def hora(request):
-    return render(request, 'app/hora.html')
+    data={
+        'horaspacientes': listarhorapacientes(),
+    }
+    
+    if request.method == 'POST':
+        rut= request.POST.get('rut')
+        nombre= request.POST.get('nombre')
+        apellidoPaterno= request.POST.get('apellidoPaterno')
+        apellidoMaterno= request.POST.get('apellidoMaterno')
+        correo= request.POST.get('correo')
+        direccion= request.POST.get('direccion')
+        telefono= request.POST.get('telefono')
+        especialidad= request.POST.get('especialidad')
+        fecha= request.POST.get('fecha')
+        hora= request.POST.get('hora')
+        salida=agregarhorapaciente(rut,nombre,apellidoPaterno,apellidoMaterno,correo,direccion,telefono,especialidad,fecha,hora)
+        if salida == 1:
+            data['mensaje'] = 'Hora agregada correctamente'
+            data['horaspacientes'] = listarhorapacientes()
+        else:
+            data['mensaje'] = 'Error al agregar hora'
+        
+       
+    
+    return render(request, 'app/hora.html',data)
 
 def nosotros(request):
     return render(request, 'app/nosotros.html')
@@ -25,6 +49,15 @@ def especialistas(request):
 
 def administracion(request):
     return render(request, 'app/administracion.html')
+
+def horaspacientes(request):
+    print(listarhorapacientes())
+    data={
+        'horaspacientes': listarhorapacientes(),
+    }
+    return render(request, 'app/horaspacientes.html',data)
+
+
 
 def pago (request):
     data = {
@@ -136,3 +169,26 @@ def agregar_pago(idpago,monto,rut):
     salida2 = cursor.var(cx_Oracle.NUMBER)
     cursor.callproc('sp_agr_pago', [idpago,monto,rut,salida2])
     return salida2.getvalue()
+
+# HORA PACIENTES
+
+def listarhorapacientes():
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor() #llama
+    out_cur3 = django_cursor.connection.cursor()  #recibe
+    
+    cursor.callproc('sp_listar_horapaciente', [out_cur3]) #llama al procedimiento almacenado
+    
+    listahorapaciente = []
+    for fila in out_cur3:
+        listahorapaciente.append(fila)
+        
+    return listahorapaciente
+
+def agregarhorapaciente(rut,nombre,apellidoPaterno,apellidoMaterno,correo,direccion,telefono,especialidad,fecha,hora):
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor() #llama
+    salida3 = cursor.var(cx_Oracle.NUMBER)
+    cursor.callproc('sp_agr_horapaciente', [rut,nombre,apellidoPaterno,apellidoMaterno,correo,direccion,telefono,especialidad,fecha,hora,salida3])
+    return salida3.getvalue()
+

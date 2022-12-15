@@ -12,4 +12,6 @@ urlpatterns = [
     path('pago', pago, name="pago"),
     path('test', test, name="test"),
     path('informepago', informepago, name="informepago"),
+    path('horaspacientes', horaspacientes, name="horaspacientes"),
+
 ]
