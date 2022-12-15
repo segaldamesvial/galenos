@@ -6,6 +6,8 @@
 
 <h1>TEST</h1>
 
+
+<!--LISTAR-->
 <h2>Pacientes</h2>
 <table>
     <tr>
@@ -19,17 +21,45 @@
     </tr>
     {% for pac in pacientes %}
     <tr>
-        <td>{{pac.0}}</td>
-        <td>{{pac.1}}</td>
-        <td>{{pac.2}}</td>
-        <td>{{pac.3}}</td>
-        <td>{{pac.4}}</td>
-        <td>{{pac.5}}</td>
-        <td>{{pac.6}}</td>
+        <td>{{pac.0}}</td> <!--rut-->   
+        <td>{{pac.1}}</td> <!--nombre-->
+        <td>{{pac.2}}</td> <!--apellido-->
+        <td>{{pac.3}}</td> <!--fecha de nacimiento-->
+        <td>{{pac.4}}</td> <!--correo-->
+        <td>{{pac.5}}</td> <!--direccion-->
+        <td>{{pac.6}}</td> <!--celular-->
     </tr>
     {% endfor %}
 
+<!--FORMULARIO-->
+<h2>Agregar Paciente</h2>
+<form action="" method="POST">
+    {% csrf_token %}
 
+    <label for="rut">Rut</label>
+    <input type="text" name="rut" id="rut" required>
+    <br>
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre" required>
+    <br>
+    <label for="apellido">Apellido</label>
+    <input type="text" name="apellido" id="apellido" required>
+    <br>
+    <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+    <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required>
+    <br>
+    <label for="correo">Correo</label>
+    <input type="text" name="correo" id="correo" required>
+    <br>
+    <label for="direccion">Direccion</label>
+    <input type="text" name="direccion" id="direccion" required>
+    <br>
+    <label for="celular">Celular</label>
+    <input type="number" name="celular" id="celular" required>
+    <br>
+    <input type="submit" value="Agregar">
+</form> 
 
+{{mensaje}}
 
 {% endblock %}
