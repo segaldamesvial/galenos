@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<h2>Calendarios Medicos</h2>
+<br><br>
+<div class="table-responsive">
+<table class="table">
+    <tr>
+        <th>ID Calendario</th> 
+        <th>Rut Medico</th>
+        <th>Nombre Medico</th>
+        <th>Fecha</th>
+    </tr>
+    {% for cal in calendarios %}
+    <tr>
+        <td>{{cal.0}}</td> <!--rut-->   
+        <td>{{cal.1}}</td> <!--nombre--> 
+        <td>{{cal.2}}</td> <!--apellido paterno--> 
+        <td>{{cal.3}}</td> <!--apellido materno--> 
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+
+{% endblock %}

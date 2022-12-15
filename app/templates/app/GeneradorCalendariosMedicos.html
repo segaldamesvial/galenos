@@ -1,0 +1,85 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<br>
+<br>
+    <div class="container-fluid px-0 px-sm-4 mx-auto justify-content-center">
+        <div class="row justify-content-center mx-0">
+            <div class="col-lg-10">
+                <div class="row justify-content-center mx-0 card border-0">
+                    <form class="jot-form-form justify-content-center" action=""  method="post" name="datos" id="2" autocomplete="on">
+                        {% csrf_token %}
+                        <div role="main" class="form-all">
+                            <ul class="form-section page-section">
+                                <div class="form-header-group  header-default">
+                                    <div class="header-text httal htvam">
+                                        <h2 id="header_22" class="form-header">Registrar Pago</h2>
+                                    </div>
+                                </div>
+                                <li class="form-line jf-required" data-type="number" id="id_15">
+                                        <label class="form-label form-label-left form-label-auto" id="label_15" for="nombres">ID CALENDARIO
+                                            <span class="form-required">*</span>
+                                        </label>
+                                        <div id="cid_15" class="form-input jf-required">
+                                            <div data-wrapper-react="true" class="extended">
+                                            <span class="form-sub-label-container">
+                                                <input type="number" id="idcalendariobase" name="idcalendariobase" class="form-textbox" size="10" required="" />
+                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Nro ID </label>
+                                            </span>
+                                            </div>
+                                        </div>    
+                                </li>
+                                <li class="form-line jf-required" data-type="number">
+                                    <label class="form-label form-label-left form-label-auto">
+                                        Rut Medico
+                                        <span class="form-required">
+                                        *
+                                        </span>
+                                    </label>
+                                    <div id="cid_17" class="form-input jf-required">
+                                        <div class="form-address-table jsTest-addressField">
+                                        <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                            <span class="form-address-line form-address-street-line jsTest-address-lineField">
+                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                                <input type="text" id="rutmedico" name="rutmedico" class="form-textbox form-address-line" required="" />
+                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Rut del medico </label>
+                                            </span>
+                                            </span>
+                                <li class="form-line jf-required" data-type="text" id="nombremedico">
+                                    <label class="form-label form-label-left form-label-auto" id="nombremedico">
+                                        Nombre Medico
+                                        <span class="form-required">
+                                        *
+                                        </span>
+                                    </label>
+                                    <div id="cid_26" class="form-input jf-required">
+                                        <span class="form-sub-label-container" style="vertical-align:top">
+                                        <input type="text" id="nombremedico" name="nombremedico" class="form-textbox" size="30" placeholder="" required="" />
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="form-line jf-required" data-type="control_phone" id="id_18">
+                                    <label class="form-label form-label-left form-label-auto" id="label_18" for="input_18_area">
+                                        Fecha
+                                        <span class="form-required">
+                                        *
+                                        </span>
+                                    <input type="date" id="fecha" name="fecha" value="2022-07-22" min="2022-01-01" max="2030-12-31" >
+                                    <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Fecha a escoger </label>
+                                    <br><br>
+                                    <input type="submit" value="Generar" class="btn btn-success">    
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                    {{mensaje}}
+                </div>
+            </div>
+        </div>
+    </div>    
+
+
+{% endblock %}

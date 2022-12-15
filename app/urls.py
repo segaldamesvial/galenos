@@ -13,5 +13,7 @@ urlpatterns = [
     path('test', test, name="test"),
     path('informepago', informepago, name="informepago"),
     path('horaspacientes', horaspacientes, name="horaspacientes"),
+    path('calendarios', calendarios, name="calendarios"),
+    path('GeneradorCalendariosMedicos', GeneradorCalendariosMedicos, name="GeneradorCalendariosMedicos"),
 
 ]

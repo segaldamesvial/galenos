@@ -96,7 +96,33 @@ def informepago(request):
     return render(request, 'app/informepago.html',data)
 
 
+def calendarios(request):
+    print(lista_calendarios())
+    data={
+        'calendarios': lista_calendarios(),
+    }
+    
+    return render(request, 'app/calendarios.html',data)
 
+def GeneradorCalendariosMedicos(request):
+    data={
+        'calendarios': lista_calendarios(),
+    }
+    if request.method == 'POST':
+        idCalendarioBase = request.POST.get('idcalendariobase')
+        rutmedico= request.POST.get('rutmedico')
+        nombreMedico= request.POST.get('nombremedico')
+        fecha= request.POST.get('fecha')
+        salida=agregarCalendarioMedico(idCalendarioBase,rutmedico,nombreMedico,fecha)
+        if salida == 1:
+            data['mensaje'] = 'Calendario agregado correctamente'
+            data['calendarios'] = lista_calendarios()
+        else:
+            data['mensaje'] = 'Error al agregar calendario'
+            
+    return render(request, 'app/GeneradorCalendariosMedicos.html',data)
+
+    
 
 
 def test(request):
@@ -191,4 +217,30 @@ def agregarhorapaciente(rut,nombre,apellidoPaterno,apellidoMaterno,correo,direcc
     salida3 = cursor.var(cx_Oracle.NUMBER)
     cursor.callproc('sp_agr_horapaciente', [rut,nombre,apellidoPaterno,apellidoMaterno,correo,direccion,telefono,especialidad,fecha,hora,salida3])
     return salida3.getvalue()
+
+#---------------------------------------------------------------
+# Calendarios Medicos
+
+def lista_calendarios():
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor() #llama
+    out_cur4 = django_cursor.connection.cursor()  #recibe
+    
+    cursor.callproc('sp_listar_calendarioMedicos', [out_cur4]) #llama al procedimiento almacenado
+    
+    listacalendarios = []
+    for fila in out_cur4:
+        listacalendarios.append(fila)
+        
+    return listacalendarios
+
+
+
+def agregarCalendarioMedico(idCalendarioBase,rutmedico,nombreMedico,fecha):
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor() #llama
+    salida4 = cursor.var(cx_Oracle.NUMBER)
+    cursor.callproc('sp_agregar_calendarioMedico', [idCalendarioBase,rutmedico,nombreMedico,fecha,salida4])
+    return salida4.getvalue()
+
 

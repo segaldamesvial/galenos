@@ -76,7 +76,11 @@ class horaPaciente (models.Model):
     hora= models.CharField(max_length=6)
     
 
-
+class CalendarioMedico (models.Model):
+    idCalendarioBase = models.IntegerField(primary_key=True)
+    rutmedico = models.CharField(max_length=20)
+    nombreMedico = models.CharField(max_length=50)
+    fecha = models.DateField()
     
     
 # relaciones entre clases 
