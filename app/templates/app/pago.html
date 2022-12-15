@@ -62,39 +62,40 @@
                                             </span>
                                             </span>
                                         </div>
-                                        <input type="submit" value="RegistrarPago" class="btn btn-success"/>
-                                            <br><br>
-                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
-                                            Registrar Pago
-                                          </button>
-                                          <div class="modal" id="myModal">
+                                        <input type="submit" value="RegistrarPago" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal"/>
+                                        <div class="modal" id="myModal">
                                             <div class="modal-dialog">
                                               <div class="modal-content">
+                                          
+                                                <!-- Modal Header -->
                                                 <div class="modal-header">
-                                                  <h4 class="modal-title">Registro de pago</h4>
+                                                  <h4 class="modal-title">MENSAJE</h4>
                                                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                 </div>
+                                          
+                                                <!-- Modal body -->
                                                 <div class="modal-body">
-                                                    <ul>
-                                                        <li>Nombre : Nicolas Gonzales </li>
-                                                        <li>Dia del pago : 6 de Diciembre</li>
-                                                        <li>Hora del pago : 14:30 PM</li>
-                                                        <li>Correo Electronico : nico@gmail.com</li>
-                                                        <li>Cantidad Pagada : $5.000.000</li>
-                                                        <li>Forma de pago: Tarjerta</li>
-                                                    </ul>
+                                                    {{mensaje}}
                                                 </div>
-                                                <div class="modal-footer">  
-                                                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">Confirmar</button>  
+                                          
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <center>
+                                                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                                    </center>
                                                 </div>
+                                          
                                               </div>
+                                            </div>
+                                          </div>
+                                      
+                                            <br><br>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </form>
-                    {{mensaje}}
+                   
                 </div>
             </div>
         </div>
