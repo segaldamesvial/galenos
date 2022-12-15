@@ -29,10 +29,22 @@ def administracion(request):
 def pago (request):
     return render(request, 'app/pago.html')
 
+def informepago(request):
+    print(lista_pago())
+    data={
+        'pago': lista_pago(),
+    }
+    return render(request, 'app/informepago.html',data)
+
+
+
+
+
 def test(request):
     data = {
         'pacientes': lista_pacientes(),  
     }
+    print(data)
     
     
     if request.method == 'POST':
@@ -78,3 +90,16 @@ def agregarPaciente(rut,nombre,apellido,fechanacimiento,correo,direccion,celular
     cursor.callproc('sp_agr_paciente', [rut,nombre,apellido,fechanacimiento,correo,direccion,celular,salida])
     return salida.getvalue()
   
+
+def lista_pago():
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor() #llama
+    out_cur2 = django_cursor.connection.cursor()  #recibe
+    
+    cursor.callproc('sp_listar_pago', [out_cur2]) #llama al procedimiento almacenado
+    
+    listapago = []
+    for fila in out_cur2:
+        listapago.append(fila)
+        
+    return listapago

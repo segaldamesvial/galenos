@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<!--LISTAR-->
+<h2>Resumenes de Pagos</h2>
+<br><br>
+<div class="table-responsive">
+<table class="table">
+    <tr>
+        <th>ID PAGO</th>
+        <th>MONTO</th>
+        <th>RUT</th>
+    </tr>
+    {% for pag in pago %}
+    <tr>
+        <td>{{pag.0}}</td> <!--id-->   
+        <td>${{pag.1}}</td> <!--monto-->
+        <td>{{pag.2}}</td> <!--rut-->
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}
