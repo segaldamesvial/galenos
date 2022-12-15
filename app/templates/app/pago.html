@@ -11,6 +11,7 @@
             <div class="col-lg-10">
                 <div class="row justify-content-center mx-0 card border-0">
                     <form class="jot-form-form justify-content-center" action=""  method="post" name="datos" id="2" autocomplete="on">
+                        {% csrf_token %}
                         <div role="main" class="form-all">
                             <ul class="form-section page-section">
                                 <div class="form-header-group  header-default">
@@ -18,44 +19,35 @@
                                         <h2 id="header_22" class="form-header">Registrar Pago</h2>
                                     </div>
                                 </div>
-                                <li class="form-line jf-required" data-type="control_fullname" id="id_15">
-                                        <label class="form-label form-label-left form-label-auto" id="label_15" for="nombres">Nombre y Apellidos
+                                <li class="form-line jf-required" data-type="number" id="id_15">
+                                        <label class="form-label form-label-left form-label-auto" id="label_15" for="nombres">ID
                                             <span class="form-required">*</span>
                                         </label>
                                         <div id="cid_15" class="form-input jf-required">
                                             <div data-wrapper-react="true" class="extended">
                                             <span class="form-sub-label-container">
-                                                <input type="text" id="nombre" name="nombre" class="form-textbox" size="10" required="" />
-                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Nombre </label>
-                                            </span>
-                                            <span class="form-sub-label-container">
-                                                <input type="text" id="apellidoP" name="apellidoP" class="form-textbox" size="10" required="" />
-                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Apellido Paterno </label>
-                                            </span>
-                                            <span class="form-sub-label-container">
-                                                <input type="text" id="apellidoM" name="apellidoM" class="form-textbox" size="15" required="" />
-                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Apellido Materno </label>
+                                                <input type="number" id="pagoid" name="pagoid" class="form-textbox" size="10" required="" />
+                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Nro ID </label>
                                             </span>
                                             </div>
                                         </div>    
                                 </li>
-                                <li class="form-line jf-required" data-type="control_email" id="email">
-                                    <label class="form-label form-label-left form-label-auto" id="email">
-                                        Correo Electronico
+                                <li class="form-line jf-required" data-type="number" id="monto">
+                                    <label class="form-label form-label-left form-label-auto" id="monto">
+                                        Monto
                                         <span class="form-required">
                                         *
                                         </span>
                                     </label>
                                     <div id="cid_26" class="form-input jf-required">
                                         <span class="form-sub-label-container" style="vertical-align:top">
-                                        <input type="email" id="email" name="email" class="form-textbox" size="30" placeholder="" required="" />
-                                        <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> example@example.com </label>
+                                        <input type="number" id="monto" name="monto" class="form-textbox" size="30" placeholder="" required="" />
                                         </span>
                                     </div>
                                 </li>
-                                <li class="form-line jf-required" data-type="control_address">
+                                <li class="form-line jf-required" data-type="number">
                                     <label class="form-label form-label-left form-label-auto">
-                                        Pago
+                                        Rut 
                                         <span class="form-required">
                                         *
                                         </span>
@@ -65,20 +57,13 @@
                                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
                                             <span class="form-address-line form-address-street-line jsTest-address-lineField">
                                             <span class="form-sub-label-container" style="vertical-align:top">
-                                                <input type="text" id="direccion" name="direccion" class="form-textbox form-address-line" required="" />
-                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Cantidad de pago </label>
+                                                <input type="text" id="rut" name="rut" class="form-textbox form-address-line" required="" />
+                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Rut de la persona que paga </label>
                                             </span>
                                             </span>
                                         </div>
-                                        <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
-                                            <span class="form-address-line form-address-city-line jsTest-address-lineField ">
-                                            <span class="form-sub-label-container" style="vertical-align:top">
-                                                <input type="text" id="ciudad" name="ciudad" class="form-textbox form-address-city" required="" />
-                                                <label class="form-sub-label" style="min-height:13px" aria-hidden="false"> Forma de pago </label>
-                                            </span>
-                                            </span>
-                                        </div>
-                                            <br>
+                                        <input type="submit" value="RegistrarPago" class="btn btn-success"/>
+                                            <br><br>
                                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
                                             Registrar Pago
                                           </button>

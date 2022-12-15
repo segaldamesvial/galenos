@@ -27,13 +27,39 @@ def administracion(request):
     return render(request, 'app/administracion.html')
 
 def pago (request):
-    return render(request, 'app/pago.html')
+    data = {
+        'pago': lista_pago(),
+    }
+    
+    if request.method == 'POST':
+        idpago = request.POST.get('pagoid')
+        monto = request.POST.get('monto')
+        rut= request.POST.get('rut')
+        salida=agregar_pago(idpago,monto,rut)
+        if salida == 1:
+            data['mensaje'] = 'Pago agregado correctamente'
+            data['pago'] = lista_pago()
+        else:
+            data['mensaje'] = 'Error al agregar pago'
+    
+    return render(request, 'app/pago.html',data)
 
 def informepago(request):
     print(lista_pago())
     data={
         'pago': lista_pago(),
     }
+    
+    if request.method == 'POST':
+        idpago = request.POST.get('pagoid')
+        monto = request.POST.get('monto')
+        rut= request.POST.get('rut')
+        salida=agregar_pago(idpago,monto,rut)
+        if salida == 1:
+            data['mensaje'] = 'Pago agregado correctamente'
+            data['pago'] = lista_pago()
+        else:
+            data['mensaje'] = 'Error al agregar pago'
     return render(request, 'app/informepago.html',data)
 
 
@@ -103,3 +129,10 @@ def lista_pago():
         listapago.append(fila)
         
     return listapago
+
+def agregar_pago(idpago,monto,rut):
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor() #llama
+    salida2 = cursor.var(cx_Oracle.NUMBER)
+    cursor.callproc('sp_agr_pago', [idpago,monto,rut,salida2])
+    return salida2.getvalue()

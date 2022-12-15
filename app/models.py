@@ -43,7 +43,7 @@ class Paciente (models.Model):
     celular= models.IntegerField()
     
 class Pago (models.Model):
-    idPago= models.AutoField(primary_key=True)
+    idPago= models.IntegerField(primary_key=True)
     monto= models.IntegerField()
     rut= models.CharField(max_length=20)
 
